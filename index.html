@@ -12,18 +12,47 @@
 
 </head>
 <body>
+
+    
+
+
+    <div id="wrap">
+    <div id="outer">
+
+
+    <div id="game">
+
     <div class="sound">
         <img src="img/SOUND_ON.png" alt="" id="sound">
+    </div>
+
+    <div id="instructions" class="instructions">
+        <h1>PAUSED</h1>
+        <img src="img/keys.png" alt="" id="keys">
+        <p>or A & D</p>
+        <p>Press SPACE BAR to play</p>
+        <br><br>
     </div>
     
     <div id="gameover">
         <img src="img/youwon.png" alt="" id="youwon">
-        <img src="img/gameover.png" alt="" id="youlose">
+        <img src="img/youlost.png" alt="" id="youlose">
         <div id="restart">Play Again!</div>
     </div>
    
-    <canvas id="breakout" width="400" height="500"></canvas>
+    <canvas id="breakout" width="660" height="500"></canvas>
+
+    <div class="screen-size">
+        <img src="img\maximize.png" onclick="maximizeScreen()" alt="" id="maxScreen">
+        <img src="img\shrink.png" onclick="minimizeScreen()" alt="" id="minScreen">
+    </div>
+
+    </div>
+
+    </div>
+    </div>
     
+
     <script src="components.js"></script>
     <script src="game.js"></script>
 </body>
