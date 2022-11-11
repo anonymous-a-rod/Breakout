@@ -120,3 +120,10 @@ p {
 #keys {
     height: 100px;
 }
+
+#ludicrous {
+    position: absolute;
+    justify-content: center;
+    bottom: 0px;
+    font-size: 1em;
+}

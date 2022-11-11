@@ -22,6 +22,7 @@ let leftArrow = false;
 let rightArrow = false;
 let Space = false;
 let paused = true;
+let ludicrousMode = false;
 
 
 
@@ -68,10 +69,20 @@ document.addEventListener("keyup", function(event){
 function movePaddle(){
     if(!paused){
     if(leftArrow == true && paddle.x > 0) {
-        paddle.x -= paddle.dx;
+        if(ludicrousMode){
+            paddle.x -= 2*paddle.dx;
+        }
+        if(!ludicrousMode){
+            paddle.x -= paddle.dx;
+        }
     }
     if(rightArrow == true && paddle.x < canvas.width - PADDLE_WIDTH) {
-        paddle.x += paddle.dx;
+        if(ludicrousMode){
+            paddle.x += 2*paddle.dx;
+        }
+        if(!ludicrousMode){
+            paddle.x += paddle.dx;
+        }
     }
     }
 }
@@ -110,6 +121,7 @@ if (event.key == " ") // SPACEBAR KEY
 }
 });
 
+
 // INSTRUCTIONS TO TOGGLE ON / OFF 
 let instructions = document.getElementById("instructions");
 
@@ -129,11 +141,38 @@ function togglePause(){
 }
 
 
+// EVENT LISTENER FOR q KEY
+document.addEventListener("keydown", function(event) {
+if (event.key == "q") // q KEY
+{
+    toggleLudicrousMode();
+}
+});
+
+// TOGGLE LUDICROUS MODE ON/OFF
+function toggleLudicrousMode(){
+    if (!ludicrousMode){  
+        ludicrousMode = true;       
+    } else if (ludicrousMode)
+    {
+       ludicrousMode = false;
+    }
+}
+
+
 // MOVE THE BALL
 function moveBall(){
-    if(!paused){
+    if(ludicrousMode){
+        if(!paused){
+    ball.x += 2*ball.dx;
+    ball.y += 2*ball.dy;
+    }
+    }
+    if(!ludicrousMode){
+        if(!paused){
     ball.x += ball.dx;
     ball.y += ball.dy;
+    }
     }
 }
 
