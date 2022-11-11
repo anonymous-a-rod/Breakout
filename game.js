@@ -66,11 +66,13 @@ document.addEventListener("keyup", function(event){
 
 // MOVE PADDLE
 function movePaddle(){
+    if(!paused){
     if(leftArrow == true && paddle.x > 0) {
         paddle.x -= paddle.dx;
     }
     if(rightArrow == true && paddle.x < canvas.width - PADDLE_WIDTH) {
         paddle.x += paddle.dx;
+    }
     }
 }
 
@@ -479,7 +481,6 @@ function resize(){let scale,
     wrapper.style.width = isMax?'':maxWidth * scale;
     wrapper.style.height = isMax?'':maxHeight * scale;
 }
-
 
 
 

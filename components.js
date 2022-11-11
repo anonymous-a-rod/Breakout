@@ -1,11 +1,58 @@
 /////// LOAD IMAGES ////////
 
 
-
 // BACKGROUND IMAGE
 const BG_IMG = new Image();
 
-BG_IMG.src = "img/cartoon-forest-bg.jpg";    
+// GENERATE A RANDOM BACKGROUND IMAGE
+let randomNumer = Math.floor(Math.random()*14)
+
+switch(randomNumer){
+    case 0:
+       BG_IMG.src = "img/cartoon-forest-bg.jpg";
+       break;
+    case 1:
+        BG_IMG.src = "img/african-desert-bg.jpg"; 
+        break;
+    case 2:
+        BG_IMG.src = "img/forest-bg.jpg";
+        break;
+    case 3:
+        BG_IMG.src = "img/cosmic-bg.png";
+        break;
+    case 4:
+        BG_IMG.src = "img/summer-bg.jpg";
+        break;
+    case 5:
+        BG_IMG.src = "img/fantasy-bg.jpg";
+        break;
+    case 6:
+        BG_IMG.src = "img/gothic-bg.jpg";
+        break;
+    case 7:
+        BG_IMG.src = "img/jungle-bg.jpg";
+        break;
+    case 8:
+        BG_IMG.src = "img/naboo-bg.png";
+        break;
+    case 9:
+        BG_IMG.src = "img/nature-bg.jpg";
+        break;
+    case 10:
+        BG_IMG.src = "img/riverside-bg.jpg";
+        break;
+    case 11:
+        BG_IMG.src = "img/town-bg.jpg";
+        break;
+    case 12:
+        BG_IMG.src = "img/tropic-bg.png";
+        break;
+    case 13:
+        BG_IMG.src = "img/winter-bg.jpg";
+        break;
+    default:
+        BG_IMG.src = "img/winter-bg.jpg"
+}
 
 
 
